@@ -1,17 +1,17 @@
 ﻿using System.Collections.Generic;
 namespace Kultie.StateMachine
 {
-    public class StateMachine : StateMachineBase
+    public class StateMachine<T> : StateMachineBase<T> where T: IStateContext
     {
-        private Dictionary<string, IState> states;
+        private Dictionary<string, IState<T>> states;
 
-        public IState currentState;
+        public IState<T> currentState;
 
-        public StateMachine(Dictionary<string, IState> states) {
+        public StateMachine(Dictionary<string, IState<T>> states) {
             this.states = states;
         }
 
-        public void Change(string name, IStateContext context) {
+        public void Change(string name, T context) {
             if (!states.ContainsKey(name)) {
                 return;
             }
