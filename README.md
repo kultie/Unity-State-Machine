@@ -30,7 +30,7 @@ Kultie.StateMachine
 - Basic work flow for creating a State Machine:
     - Create enums as the key for the each State register in state machine
     - Create context class extend from StateContextBase
-    - Create each specific state by extending StateBase<T> with T is the class created from (2)
+    - Create each specific state by extending StateBase<T> with T is the class created from step two
     - Create a dictionary to map state and key
     - Create an instance of context class
     - Create instance of StateMachine class
