@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Kultie.StateMachine
 {
-
-    public interface IStateContext
+    public class StateContextBase
     {
 
     }
 
-    public abstract class StateMachineBase<T> where T : IStateContext
+    public abstract class StateMachineBase<T> where T : StateContextBase
     {
         private static EmptyState<T> emptyState;
 
@@ -22,25 +21,27 @@ namespace Kultie.StateMachine
 
     }
 
-    public interface IState<T> where T: IStateContext
+    public interface IState<T> where T : StateContextBase
     {
-        void Update(float dt);
         void Enter(T context);
+        void Update(float dt);
         void Exit();
     }
 
-    class EmptyState<T> : IState<T> where T: IStateContext
+    class EmptyState<T> : IState<T> where T : StateContextBase
     {
-        public void Enter(T context)
-        {
-        }
-
-        public void Exit()
-        {
-        }
 
         public void Update(float dt)
         {
+
+        }
+        public void Enter(T context)
+        {
+
+        }
+        public void Exit()
+        {
+
         }
     }
 }
