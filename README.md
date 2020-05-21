@@ -36,3 +36,5 @@ Kultie.StateMachine
     - Create instance of StateMachine class
     - Change the state machine to initial class
     - Call update function of state machine inside a Update function of Unity
+- You can go to State Machine/ Template and typing the namespace, the state key and the context to quickly creating a state machine template to work with
+- The generated file will be locate at Assets/StateMachine/`Your namespace`. Inside that will have a commented code snippet for you to copy and paste inside your controller script
