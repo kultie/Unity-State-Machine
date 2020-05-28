@@ -38,3 +38,18 @@ Kultie.StateMachine
     - Call update function of state machine inside a Update function of Unity
 - You can go to State Machine/ Template and typing the namespace, the state key and the context to quickly creating a state machine template to work with
 - The generated file will be locate at Assets/StateMachine/`Your namespace`. Inside that will have a commented code snippet for you to copy and paste inside your controller script
+
+# Update 28/5/2020
+- Change old demo scene to StateMachine Instance Demo
+- Added a basic state machine that can be added in the game object editor
+    - Namespace: Kultie.StateMachine.Behavior
+    - Basic workflow are:
+        - Create new gameobject
+        - Add StateMachineComponent to gameobject
+        - Create a new component script extends from StateContextComponent and add your data there
+        - Add created context component script to the gameobject
+        - Create as many state as you want extend from StateComponent and implments all abstract stuffs
+        - Add them to gameobject
+        - Drag gameobject to the State Container of StateMachineComponent
+        - Drag gameobject to the Context of StateMachineComponent;
+    - There are Demo inside Demo/Scenes/StateMachine Behavior Demo
